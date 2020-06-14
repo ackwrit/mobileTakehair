@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:takehair/controller/chatContact.dart';
 
 class professionnelSettingsController extends StatefulWidget{
   @override
@@ -20,9 +21,13 @@ class homeProfSettings extends State<professionnelSettingsController>{
           RaisedButton(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               onPressed: (){
-              print('Allez sur chat');
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context){
+                    return chatContact();
+                  }
+              ));
               },
-            child: Text('Chat'),
+            child: Text('Messagerie'),
             color: Colors.blue[100],
 
           ),

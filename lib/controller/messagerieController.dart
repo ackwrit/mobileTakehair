@@ -81,7 +81,13 @@ class homeMessagerie extends State<messagerieController>{
               return new Card(
                 child: ListTile(
                   title: Text("Dernier message : ${converse.last_message}"),
-                  trailing: Text(converse.date),
+                  trailing: Row(
+                    children: [
+                      Text(converse.date),
+                    ],
+
+                  ),
+
 
 
                 )
@@ -105,7 +111,6 @@ class homeMessagerie extends State<messagerieController>{
                 itemBuilder: (BuildContext context,DataSnapshot snapshot,Animation<double>animation,int index)
                 {
                   message mess = message(snapshot);
-                  print(mess.texte);
                   return chatBubble(identifiant, widget.pro, mess, animation);
                 }
             ),
